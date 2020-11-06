@@ -45,7 +45,7 @@ let faceDetection = null;
 let illustration = null;
 let canvasScope;
 let canvasWidth = screen.width/1.25;//800;
-let canvasHeight = screen.height/1.25;//800;
+let canvasHeight = screen.height/1.35;//800;
 
 // ML models
 let facemesh;
