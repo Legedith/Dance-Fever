@@ -44,8 +44,8 @@ let videoHeight = 300;
 let faceDetection = null;
 let illustration = null;
 let canvasScope;
-let canvasWidth = 800;
-let canvasHeight = 800;
+let canvasWidth = screen.width/1.25;//800;
+let canvasHeight = screen.height/1.25;//800;
 
 // ML models
 let facemesh;
@@ -53,6 +53,8 @@ let posenet;
 let minPoseConfidence = 0.15;
 let minPartConfidence = 0.1;
 let nmsRadius = 30.0;
+
+// alert("Your screen resolution is: " + screen.width + "x" + screen.height);
 
 // Misc
 let mobile = false;

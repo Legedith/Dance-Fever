@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pose Animator Demos</title>
+    <title>Disco Fever!</title>
+    <style>
+      body{
+        background-image: url(".\resources\images\dancefloor.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .banner {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 20%;
+      }
+      .blink {
+          animation: blink-animation 1s steps(1, start) infinite;
+          -webkit-animation: blink-animation 1s steps(5, start) infinite;
+        }
+        @keyframes blink-animation {
+          to {
+            visibility: hidden;
+          }
+        }
+        @-webkit-keyframes blink-animation {
+          to {
+            visibility: hidden;
+          }
+        }
+        .elem {
+              /* position:absolute;
+              top : 50px;
+              background-color:yellow;
+              left:50px;
+              height:30px;
+              width:30px; */
+              -webkit-transition-property: -webkit-transform;
+              -webkit-transition-duration: 1s;
+              -moz-transition-property: -moz-transform;
+              -moz-transition-duration: 1s;
+              -webkit-animation-name: grow;
+              -webkit-animation-duration: 0.5s;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -moz-animation-name: grow;
+              -moz-animation-duration: 0.5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-direction:alternate;
+              -webkit-animation-direction:alternate;
+          }
+          @-webkit-keyframes grow {
+            from {
+        -webkit-transform:scale(1);
+    }
+    to {
+        -webkit-transform:scale(1.1);
+    }
+          }
+          @-moz-keyframes grow {
+            from {
+        -moz-transform:scale(1);
+    }
+    to {
+        -moz-transform:scale(1.1);
+    }
+          }
+    </style>
   </head>
   <body>
-    <h1>Pose Animator Demos</h1>
     <ul>
-      <li><a href='camera.html'>Animated 2D avatar - Camera feed demo</a></li>
-      <li><a href='static_image.html'>Animated 2D avatar - Image demo</a></li>
+      <li><a href='camera.html'><img class="banner elem" src=".\resources\images\mfmi.png" href='camera.html'></a></li>
+      <!-- <li><a href='static_image.html'>Animated 2D avatar - Imagesssss demo</a></li> -->
     </ul>
   </body>
 </html>
