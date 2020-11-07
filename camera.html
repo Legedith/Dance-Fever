@@ -15,7 +15,6 @@
             justify-content: center;
             color:black;
         }
-
         .canvas-container {
             width: 800px;
             max-width: 100%;
@@ -37,10 +36,15 @@
             top: 0;
             position: absolute;
         }
-
-        .illustration-canvas {
-            border: 1px solid #eeeeee;
+        .move {
+            right: 0;
+            bottom: 0;
+            position: absolute;
         }
+
+        /* .illustration-canvas {
+            border: 1px solid #eeeeee;
+        } */
 
         .footer {
             position: fixed;
@@ -132,9 +136,14 @@
             </video>
             <canvas id="output" class="camera-canvas"></canvas>
             <canvas id="keypoints" class="camera-canvas"></canvas>
+           
         </div>
-        <canvas class="illustration-canvas"></cavnas>
+        <canvas class="illustration-canvas">
+            
+        </cavnas>
+        
     </div>
+    <img id="moves" class="move" src=""  width="400" height="400">
     <div class="footer">
         <div class="footer-text">
 

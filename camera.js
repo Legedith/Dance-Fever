@@ -14,6 +14,34 @@
  * limitations under the License.
  * =============================================================================
  */
+// var express  = require('express');
+
+// var app = express();
+// app.use(express.static('resources'));
+import imgurl1 from "./resources/Dancers/Slide1.PNG";
+import imgurl2 from "./resources/Dancers/Slide2.PNG";
+import imgurl3 from "./resources/Dancers/Slide3.PNG";
+import imgurl4 from "./resources/Dancers/Slide4.PNG";
+import imgurl5 from "./resources/Dancers/Slide5.PNG";
+import imgurl6 from "./resources/Dancers/Slide6.PNG";
+import imgurl7 from "./resources/Dancers/Slide7.PNG";
+import imgurl8 from "./resources/Dancers/Slide8.PNG";
+import imgurl9 from "./resources/Dancers/Slide9.PNG";
+import imgurl10 from "./resources/Dancers/Slide10.PNG";
+import imgurl11 from "./resources/Dancers/Slide11.PNG";
+var imagelist = {
+  "imgurl1"  : imgurl1,
+  "imgurl2"  : imgurl2,
+  "imgurl3"  : imgurl3,
+  "imgurl4"  : imgurl4,
+  "imgurl5"  : imgurl5,
+  "imgurl6"  : imgurl6,
+  "imgurl7"  : imgurl7,
+  "imgurl8"  : imgurl8,
+  "imgurl9"  : imgurl9,
+  "imgurl10" : imgurl10,
+  "imgurl11" : imgurl11
+}
 
 import * as posenet_module from '@tensorflow-models/posenet';
 import * as facemesh_module from '@tensorflow-models/facemesh';
@@ -66,6 +94,27 @@ const avatarSvgs = {
   'blathers': blathersSVG.default,
   'tom-nook': tomNookSVG.default,
 };
+
+//Cycling through images
+var index = 1;
+change();
+
+function change() {
+
+    //Collect all images with class 'slides'
+    var x = document.getElementById('moves');
+    
+    if(index<11)
+    {
+      index++;
+    }
+    else{
+      index = 1;
+    }
+    console.log(index,document.getElementById('moves').src);
+    document.getElementById('moves').src =  imagelist["imgurl"+index.toString()];
+    setTimeout(change, 1300);
+  }
 
 /**
  * Loads a the camera to be used in the demo
@@ -306,5 +355,6 @@ async function parseSVG(target) {
   illustration = new PoseIllustration(canvasScope);
   illustration.bindSkeleton(skeleton, svgScope);
 }
-    
+
+
 bindPage();
