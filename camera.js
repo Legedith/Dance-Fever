@@ -114,7 +114,7 @@ const avatarSvgs = {
 
 //Cycling through images
 var index = 1;
-change();
+
 
 function change() {
 
@@ -132,7 +132,18 @@ function change() {
     document.getElementById('moves').src =  imagelist["imgurl"+index.toString()];
     setTimeout(change, 1300);
     scoreEff.play()
+    incScore(5);
   }
+
+var score = 0;
+function incScore(value)
+{
+  score += value;
+  // console.log(document.getElementById('scores').textContent );
+  document.getElementById("scores").textContent = "Score: "+score.toString();
+}
+
+
 
 /**
  * Loads a the camera to be used in the demo
@@ -320,6 +331,7 @@ function setupCanvas() {
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
   canvasScope.setup(canvas);
+  
 }
 
 /**
@@ -361,6 +373,7 @@ export async function bindPage() {
   
   toggleLoadingUI(false);
   detectPoseInRealTime(video, posenet);
+  change();
 }
 
 navigator.getUserMedia = navigator.getUserMedia ||
