@@ -43,8 +43,11 @@ var imagelist = {
   "imgurl11" : imgurl11
 }
 
+const {Howl, Howler} = require('howler');
+
 import * as posenet_module from '@tensorflow-models/posenet';
 import * as facemesh_module from '@tensorflow-models/facemesh';
+// import * as neuralNetwork from '@tensorflow-models/neuralnetwork';
 import * as tf from '@tensorflow/tfjs';
 import * as paper from 'paper';
 import dat from 'dat.gui';
@@ -62,6 +65,20 @@ import * as boySVG from './resources/illustration/boy.svg';
 import * as abstractSVG from './resources/illustration/abstract.svg';
 import * as blathersSVG from './resources/illustration/blathers.svg';
 import * as tomNookSVG from './resources/illustration/tom-nook.svg';
+
+import danceEffect from './resources/sounds/dance.mp3';
+import scoreEffect from './resources/sounds/score.mp3';
+
+var sound = new Howl({
+  src: [danceEffect]
+});
+
+sound.play();
+
+var scoreEff = new Howl({
+  src: [scoreEffect]
+});
+
 
 // Camera stream video element
 let video;
@@ -111,9 +128,10 @@ function change() {
     else{
       index = 1;
     }
-    console.log(index,document.getElementById('moves').src);
+    // console.log(index,document.getElementById('moves').src);
     document.getElementById('moves').src =  imagelist["imgurl"+index.toString()];
     setTimeout(change, 1300);
+    scoreEff.play()
   }
 
 /**
